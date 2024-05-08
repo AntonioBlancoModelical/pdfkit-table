@@ -2,7 +2,7 @@
 // "use strict";
 // https://jshint.com/
 
-const PDFDocument = require("pdfkit");
+const PDFDocument = require("pdfkit").default;
 // const EventEmitter = require('events').EventEmitter;
 
 class PDFDocumentWithTables extends PDFDocument {
@@ -110,8 +110,8 @@ class PDFDocumentWithTables extends PDFDocument {
         const rowDistance      = 0.5;
           let cellPadding      = {top: 0, right: 0, bottom: 0, left: 0}; // universal
     
-        const prepareHeader    = options.prepareHeader || (() => this.fillColor('black').font("Helvetica-Bold").fontSize(8).fill());
-        const prepareRow       = options.prepareRow || ((row, indexColumn, indexRow, rectRow, rectCell) => this.fillColor('black').font("Helvetica").fontSize(8).fill());
+        const prepareHeader    = options.prepareHeader || (() => this.fillColor('black').fontSize(8).fill());
+        const prepareRow       = options.prepareRow || ((row, indexColumn, indexRow, rectRow, rectCell) => this.fillColor('black').fontSize(8).fill());
         //const prepareCell      = options.prepareCell || ((cell, indexColumn, indexRow, indexCell, rectCell) => this.fillColor('black').font("Helvetica").fontSize(8).fill());
         
           let tableWidth       = 0;
